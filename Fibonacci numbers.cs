@@ -12,7 +12,7 @@ class Fibonacci {
     }
 
     static int FibonacciNumber(int n) {
-        if (n < 0) throw new ArgumentOutOfRangeException("n", "Index cannot be negative.");
+        if (n < 0) throw new ArgumentOutOfRangeException("n", "Не може бути негативним.");
         if (n == 0) return 1; 
         if (n == 1) return 1;
 
