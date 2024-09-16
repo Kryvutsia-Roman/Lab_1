@@ -5,17 +5,22 @@ class Fibonacci {
         Console.Write("Добрий день! Дана програма розраховує числа Фібоначчі. Введіть кількість чисел: ");
         int numbers = Convert.ToInt32(Console.ReadLine());
 
-        Console.WriteLine("Числа Фібоначчі:");
-        for (int i = 0; i < numbers; i++) {
-            Console.WriteLine($"{i + 1}: {FibonacciNumber(i)}");
+        if (numbers <= 0) {
+            Console.WriteLine("Кількість чисел повинна бути більшою за 0.");
+        } else {
+            Console.WriteLine("Числа Фібоначчі:");
+            for (int i = 0; i < numbers; i++) {
+                Console.WriteLine($"{i + 1}: {FibonacciNumber(i)}");
+            }
         }
     }
 
     static int FibonacciNumber(int n) {
-        if (n < 0) throw new ArgumentOutOfRangeException("n", "Не може бути негативним.");
-        if (n == 0) return 1; 
-        if (n == 1) return 1;
-
+        if (n < 0) {
+            throw new ArgumentOutOfRangeException("n", "Індекс не може бути від'ємним.");
+        }
+        if (n == 0) return 0; 
+        if (n == 1) return 1; 
         int a = 1;
         int b = 1;
         int c = 0;
